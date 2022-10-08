@@ -11,7 +11,9 @@ export default function QuizUI(props) {
       {/* 카테고리 클릭했으면 퀴즈 아이템 나타나도록함 */}
       {props.isClicked && (
         <div>
-          <QuizItem />
+          {props.data?.quizData?.map((quiz, index) => (
+            <QuizItem key={index} quiz={quiz} index={index} data={props.data} />
+          ))}
         </div>
       )}
     </S.Wrapper>

@@ -9,7 +9,11 @@ export default function MainUI(props) {
       <S.SubTitle>테마를 고르세요</S.SubTitle>
       <S.ThemeBox>
         {props.data?.map((theme) => (
-          <ThemeItem key={theme.id} theme={theme} />
+          <ThemeItem
+            key={theme.id}
+            theme={theme}
+            onClickMoveToQuizPage={props.onClickMoveToQuizPage}
+          />
         ))}
       </S.ThemeBox>
     </S.Wrapper>
