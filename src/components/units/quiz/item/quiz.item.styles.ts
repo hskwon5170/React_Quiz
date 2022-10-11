@@ -76,7 +76,7 @@ export const Buttons = styled.button`
   border-radius: 10px 10px 10px 10px;
   border: none;
   outline: none;
-  background-color: darkgray;
+  background-color: ${(props) => (props.isClicked ? "#50ffb0" : "darkgray")};
   color: black;
   margin-bottom: 15px;
   :hover {
@@ -94,18 +94,33 @@ export const NextButton = styled.button`
   border-radius: 10px;
   border: none;
   outline: none;
-  background-color: darkgray;
-  color: black;
-  :hover {
+  background-color: ${(props) => (props.isClicked ? "yellow" : "#d4d4d444")};
+  color: ${(props) => (props.isClicked ? "black" : "white")};
+  font-weight: bolder;
+  /* :hover {
     background-color: #0d008e;
     color: #50ffb0;
-  }
+  } */
   transition: all 250ms;
 `;
+
+export const FlexWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const QuizTimerWrapper = styled.div``;
+
+export const StatusWrap = styled.div`
+  height: 0;
+`;
+
 export const LottieWrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 35%;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
   padding: 10px;
   background-color: white;
   border-radius: 10px;
@@ -118,7 +133,7 @@ export const Lottie = styled.div`
 
 export const Status = styled.div`
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.3rem;
   width: 100%;
   margin-left: 1rem;
 `;

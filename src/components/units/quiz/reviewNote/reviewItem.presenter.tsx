@@ -39,7 +39,12 @@ export default function ReviewItemUI(props) {
                 <S.Difficulty value={rate} />
               </S.WrongQuestionDifficulty>
             </S.FlexWrapper>
-            <S.WrongQuestion>{props.review.question}</S.WrongQuestion>
+            <S.WrongQuestion>
+              {props.review.question
+                .replace(/&quot;/g, '"')
+                .replace(/&#039;/g, "'")
+                .replace(/&rsquo;/g, "'")}
+            </S.WrongQuestion>
           </S.TopWrapper>
           <S.WrongQuestionOptions></S.WrongQuestionOptions>
         </S.WrongQuestionBox>
@@ -55,7 +60,12 @@ export default function ReviewItemUI(props) {
               >
                 <S.FlexWrapper>
                   <b>{index + 1}</b>
-                  <span>{answers}</span>
+                  <span>
+                    {answers
+                      .replace(/&quot;/g, '"')
+                      .replace(/&#039;/g, "'")
+                      .replace(/&rsquo;/g, "'")}
+                  </span>
                 </S.FlexWrapper>
                 {/* <span>{props.review.correct_answer}</span> */}
                 {/* {`${index + 1}. ${answers} ${props.review.correct_answer}`} */}
@@ -72,7 +82,7 @@ export default function ReviewItemUI(props) {
         </S.MyPickedAnswer>
       </S.WrongAnswerBox>
       <S.MemoBox>
-        <S.NoteTitle>오답노트 📖</S.NoteTitle>
+        <S.NoteTitle>오답노트를 작성하세요 👨‍💻</S.NoteTitle>
         {props.isWriting ? (
           <ReactQuill
             theme="snow"

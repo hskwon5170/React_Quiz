@@ -138,11 +138,12 @@ export const MemoBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1em;
+  margin: 30px 30px;
 `;
 export const NoteTitle = styled.span`
   font-size: 1.3em;
   font-weight: 600;
-  color: black;
+  color: white;
 `;
 export const ButtonBox = styled.div`
   width: 50%;

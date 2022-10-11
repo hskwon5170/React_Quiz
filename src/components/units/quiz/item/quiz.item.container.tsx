@@ -23,6 +23,12 @@ export default function QuizItem(props) {
     inCorrectAnswersState
   );
   const [stage, setStage] = useState<number>(1);
+  const [isClicked, setIsClicked] = useState(false);
+
+  const onClickAnswer = () => {
+    if (isClicked) return;
+    setIsClicked((prev) => true);
+  };
 
   const onClickMoveToNextQuestion = (Questions) => () => {
     if (pickedAnswer === props.quiz.correct_answer) {
@@ -63,9 +69,11 @@ export default function QuizItem(props) {
       indexCounter={indexCounter}
       quiz={props.quiz}
       index={props.index}
-      Answers={props.data.Answers}
+      Answers={props.data?.Answers}
       retryingData={props.retryingData}
       isRetrying={props.isRetrying}
+      onClickAnswer={onClickAnswer}
+      isClicked={isClicked}
     />
   );
 }

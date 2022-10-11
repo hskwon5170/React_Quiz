@@ -39,7 +39,10 @@ export default function QuizItemUI(props) {
         <S.Section>
           <S.Wrapper>
             <S.QuestionTitle>문제 {props.index + 1}</S.QuestionTitle>
-            <QuizTimer timeRef={timeRef} />
+
+            <S.QuizTimerWrapper>
+              <QuizTimer timeRef={timeRef} />
+            </S.QuizTimerWrapper>
             {/* <S.StateBar state={props.index / props.stage} /> */}
             <S.Question>
               {props.quiz.question
@@ -47,7 +50,7 @@ export default function QuizItemUI(props) {
                 .replace(/&#039;/g, "'")
                 .replace(/&rsquo;/g, "'")}
             </S.Question>
-            <S.Question>
+            <S.Question onClick={props.onClickAnswer}>
               {props.isRetrying
                 ? retryingAnswers[props.indexCounter].map((answer, index) => (
                     <QuizButtonUI key={index} answer={answer} index={index} />
@@ -56,27 +59,34 @@ export default function QuizItemUI(props) {
                     <QuizButtonUI key={index} answer={answer} index={index} />
                   ))}
             </S.Question>
-            {(pickedAnswer === props.quiz.correct_answer && (
-              <S.LottieWrapper>
-                <S.Lottie className="correctContainer" ref={correctContainer} />
-                <S.Status>정답이예요!</S.Status>
-              </S.LottieWrapper>
-            )) ||
-              (props.quiz.incorrect_answers.includes(pickedAnswer) && (
+            <S.StatusWrap>
+              {(pickedAnswer === props.quiz.correct_answer && (
                 <S.LottieWrapper>
                   <S.Lottie
-                    className="incorrectContainer"
-                    ref={incorrectContainer}
+                    className="correctContainer"
+                    ref={correctContainer}
                   />
-
-                  <S.Status>틀렸어요</S.Status>
+                  <S.Status>정답이예요!</S.Status>
                 </S.LottieWrapper>
-              ))}
+              )) ||
+                (props.quiz.incorrect_answers.includes(pickedAnswer) && (
+                  <S.LottieWrapper>
+                    <S.Lottie
+                      className="incorrectContainer"
+                      ref={incorrectContainer}
+                    />
+
+                    <S.Status>틀렸어요</S.Status>
+                  </S.LottieWrapper>
+                ))}
+            </S.StatusWrap>
             <S.NextButton
               inFinished={pickedAnswer}
               onClick={props.onClickMoveToNextQuestion(props.quiz)}
+              onClickAnswer={props.onClickAnswer}
+              isClicked={props.isClicked}
             >
-              다음
+              다음 {">"}
             </S.NextButton>
           </S.Wrapper>
         </S.Section>
