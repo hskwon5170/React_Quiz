@@ -31,40 +31,48 @@ export default function ReviewItemUI(props) {
     <S.Wrapper key={props.index}>
       <S.WrongAnswerBox>
         <S.WrongQuestionBox>
-          <S.WrongQuestion>{props.review.question}</S.WrongQuestion>
-          <S.WrongQuestionOptions>
-            <S.WrongQuestionDifficulty>
-              <S.DifficultyTitle>난이도</S.DifficultyTitle>
-              <S.Difficulty value={rate} />
-            </S.WrongQuestionDifficulty>
-
-            <S.MyPickedAnswer>
-              내가 고른 답 :
-              {inCorrectAnswerCounter.map((myanswer) =>
-                props.review.incorrect_answers.find(
-                  (answer) => answer === myanswer
-                )
-              )}
-            </S.MyPickedAnswer>
-          </S.WrongQuestionOptions>
+          <S.TopWrapper>
+            <S.FlexWrapper>
+              <S.Category>{props.review.category}</S.Category>
+              <S.WrongQuestionDifficulty>
+                <S.DifficultyTitle>난이도</S.DifficultyTitle>
+                <S.Difficulty value={rate} />
+              </S.WrongQuestionDifficulty>
+            </S.FlexWrapper>
+            <S.WrongQuestion>{props.review.question}</S.WrongQuestion>
+          </S.TopWrapper>
+          <S.WrongQuestionOptions></S.WrongQuestionOptions>
         </S.WrongQuestionBox>
         <S.WrongQuestionAnswerChoiceBox>
           {props.review.incorrect_answers.map((answers, index) => (
             <>
               <S.WrongQuestionAnswerChoice
                 key={index}
+                className={
+                  props.review.correct_answer === answers ? "isActive" : ""
+                }
                 isCorrect={props.review.correct_answer === answers}
               >
-                {`${index + 1}. ${answers} ${
-                  props.review.correct_answer === answers ? "정답" : ""
-                }`}
+                <S.FlexWrapper>
+                  <b>{index + 1}</b>
+                  <span>{answers}</span>
+                </S.FlexWrapper>
+                {/* <span>{props.review.correct_answer}</span> */}
+                {/* {`${index + 1}. ${answers} ${props.review.correct_answer}`} */}
               </S.WrongQuestionAnswerChoice>
             </>
           ))}
         </S.WrongQuestionAnswerChoiceBox>
+        {/* <div>정답:{props.review.correct_answer}</div> */}
+        <S.MyPickedAnswer>
+          내가 고른 답 :
+          {inCorrectAnswerCounter.map((myanswer) =>
+            props.review.incorrect_answers.find((answer) => answer === myanswer)
+          )}
+        </S.MyPickedAnswer>
       </S.WrongAnswerBox>
       <S.MemoBox>
-        <S.NoteTitle>정답 & 해설풀이</S.NoteTitle>
+        <S.NoteTitle>오답노트 📖</S.NoteTitle>
         {props.isWriting ? (
           <ReactQuill
             theme="snow"

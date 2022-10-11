@@ -11,26 +11,45 @@ export const Section = styled.section`
 `;
 export const Title = styled.h1`
   font-size: 4em;
-  color: forestgreen;
+  color: white;
 `;
 export const Wrapper = styled.div`
-  width: 50%;
+  width: 90vw;
+  /* background-color: yellow; */
   display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
   flex-direction: column;
   align-items: center;
+  color: white;
   gap: 1em;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   padding: 2em;
-  border-radius: 20px;
   margin-bottom: 5em;
+  border-bottom: 2px solid white;
 `;
 export const WrongAnswerBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
 `;
+
+export const Category = styled.div`
+  font-weight: 600;
+  font-size: 1em;
+  color: white;
+  border-radius: 2rem;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: #0d008e;
+  display: flex;
+  align-items: center;
+`;
+
+export const TopWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const WrongQuestionBox = styled.div`
   width: 100%;
   display: flex;
@@ -38,9 +57,10 @@ export const WrongQuestionBox = styled.div`
   justify-content: space-between;
 `;
 export const WrongQuestion = styled.pre`
-  width: 50%;
+  width: 100%;
   white-space: pre-wrap;
-  font-size: 1.2em;
+  font-size: 2.2em;
+  padding: 20px;
 `;
 export const WrongQuestionOptions = styled.div`
   display: flex;
@@ -50,9 +70,16 @@ export const WrongQuestionOptions = styled.div`
 export const WrongQuestionDifficulty = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   gap: 1em;
+  margin-left: 30px;
+  font-weight: 600;
+  font-size: 1em;
+  color: white;
+  border-radius: 2rem;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: #0d008e;
 `;
 export const DifficultyTitle = styled.span`
   font-size: 1em;
@@ -70,13 +97,41 @@ export const WrongQuestionAnswerChoiceBox = styled.div`
 export const WrongQuestionAnswerChoice = styled.div`
   font-size: 1em;
   font-weight: 600;
-  color: black;
+  color: white;
+  border-radius: 2rem;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+
+  b {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 1px solid #d4d4d4;
+    border-radius: 50%;
+    color: #d4d4d4;
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+  &.isActive {
+    background-color: ${({ isCorrect }: { isCorrect: boolean }) =>
+      isCorrect ? "#00c896aa" : "#fe6768aa"};
+  }
+`;
+
+export const FlexWrapper = styled.div`
+  display: flex;
 `;
 
 export const MyPickedAnswer = styled.div`
   font-weight: 600;
   font-size: 1em;
-  color: darkorange;
+  color: black;
+  border-radius: 2rem;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: #fe6768aa;
 `;
 export const MemoBox = styled.div`
   width: 100%;
@@ -87,7 +142,7 @@ export const MemoBox = styled.div`
 export const NoteTitle = styled.span`
   font-size: 1.3em;
   font-weight: 600;
-  color: forestgreen;
+  color: black;
 `;
 export const ButtonBox = styled.div`
   width: 50%;
@@ -101,11 +156,12 @@ export const SaveButton = styled.button`
   width: 6em;
   height: 3em;
   font-size: 1.2em;
+  font-weight: bold;
   border-radius: 10px;
   border: none;
   outline: none;
-  background-color: forestgreen;
-  color: whitesmoke;
+  background-color: #50ffb0;
+  color: #0d008e;
   :hover {
     transform: scale(1.2);
   }

@@ -46,10 +46,6 @@ export const Themes = styled.div`
   justify-content: center;
   text-align: center;
   font-size: 1em;
-  /* :hover {
-    transform: translateY(-16px);
-  }
-  transition: all 250ms ease-in; */
   transition: transform 0.2s; /* Animation */
   :hover {
     transform: scale(1.1);

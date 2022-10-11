@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import ReviewItemUI from "./reviewItem.presenter";
 
 export default function ReviewItem(props) {
+  console.log("리뷰", props.review);
   const [value, setValue] = useState("");
   const router = useRouter();
   const onClickSubmitmyNote = (id) => () => {
