@@ -7,7 +7,6 @@ export const Wrapper = styled.section`
   align-items: center;
   margin-top: 3em;
   gap: 1em;
-  background-color: goldenrod;
 `;
 
 export const Title = styled.h1`
@@ -37,7 +36,7 @@ export const Themes = styled.div`
   width: 20%;
   height: 14em;
   padding: 1em;
-  background-color: purple;
+  background-color: black;
   border-radius: 10px;
   cursor: pointer;
   color: white;
