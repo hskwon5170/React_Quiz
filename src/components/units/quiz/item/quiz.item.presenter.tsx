@@ -1,12 +1,35 @@
 import * as S from "./quiz.item.styles";
+import lottie from "lottie-web";
 import { useRecoilState } from "recoil";
 import { pickedAnswerState } from "../../../../commons/store";
 import QuizButtonUI from "./quiz.button.presenter";
+import { useEffect, useRef } from "react";
 export default function QuizItemUI(props) {
   const [pickedAnswer] = useRecoilState(pickedAnswerState);
   const retryingAnswers = props.retryingData?.map(
     (Answers) => Answers.incorrect_answers
   );
+  const correctContainer = useRef(null);
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: correctContainer.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: require("../../../../../public/quizItem/107795-positive.json"),
+    });
+  }, [pickedAnswer]);
+
+  const incorrectContainer = useRef(null);
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: incorrectContainer.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: require("../../../../../public/quizItem/103831-circle-x.json"),
+    });
+  }, [pickedAnswer]);
   return (
     <>
       {props.index === props.indexCounter && (
@@ -29,10 +52,20 @@ export default function QuizItemUI(props) {
                   ))}
             </S.Question>
             {(pickedAnswer === props.quiz.correct_answer && (
-              <div>정답입니다!!!</div>
+              <S.LottieWrapper>
+                <S.Lottie className="correctContainer" ref={correctContainer} />
+                <S.Status>정답입니다</S.Status>
+              </S.LottieWrapper>
             )) ||
               (props.quiz.incorrect_answers.includes(pickedAnswer) && (
-                <div>오답입니다!!!</div>
+                <S.LottieWrapper>
+                  <S.Lottie
+                    className="incorrectContainer"
+                    ref={incorrectContainer}
+                  />
+
+                  <S.Status>오답입니다</S.Status>
+                </S.LottieWrapper>
               ))}
 
             <S.NextButton

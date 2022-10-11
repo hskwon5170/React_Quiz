@@ -2248,6 +2248,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lottie-web@npm:^5.9.6":
+  version: 5.9.6
+  resolution: "lottie-web@npm:5.9.6"
+  checksum: aed6a1d0c24eefb6c42a42aae18f29737746551cfdc86319f1b9675f5bc276ba26971e8d2b0e1498df880571fe4bfe2fc87885a1d4f8a318d5e4e5b939b7a474
+  languageName: node
+  linkType: hard
+
 "lru-cache@npm:^6.0.0":
   version: 6.0.0
   resolution: "lru-cache@npm:6.0.0"
@@ -2743,6 +2750,7 @@ __metadata:
     axios: ^1.1.2
     eslint: 8.25.0
     eslint-config-next: 12.3.1
+    lottie-web: ^5.9.6
     next: 12.3.1
     react: 18.2.0
     react-dom: 18.2.0

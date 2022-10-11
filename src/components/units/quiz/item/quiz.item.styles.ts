@@ -61,3 +61,19 @@ export const NextButton = styled.button`
   }
   transition: all 250ms;
 `;
+export const LottieWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const Lottie = styled.div`
+  position: relative;
+  width: 50px;
+`;
+
+export const Status = styled.div`
+  font-weight: bold;
+  font-size: 2rem;
+  width: 100%;
+  margin-left: 1rem;
+`;
