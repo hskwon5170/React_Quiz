@@ -7,18 +7,19 @@ export const Wrapper = styled.section`
   align-items: center;
   margin-top: 3em;
   gap: 1em;
+  background-color: goldenrod;
 `;
 
 export const Title = styled.h1`
   font-size: 4em;
-  color: forestgreen;
+  color: white;
 `;
 
 export const Divider = styled.div`
   width: 50%;
-  height: 2px;
+  height: 5px;
   margin: auto;
-  background-color: forestgreen;
+  background-color: white;
 `;
 export const SubTitle = styled.h2`
   font-size: 2em;
@@ -36,10 +37,10 @@ export const Themes = styled.div`
   width: 20%;
   height: 14em;
   padding: 1em;
-  background-color: blanchedalmond;
+  background-color: purple;
   border-radius: 10px;
   cursor: pointer;
-  color: forestgreen;
+  color: white;
   display: flex;
   flex-direction: row;
   align-items: center;

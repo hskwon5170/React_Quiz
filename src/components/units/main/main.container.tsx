@@ -4,7 +4,13 @@ import MainUI from "./main.presenter";
 import { getThemes } from "./main.query";
 
 export default function Main() {
-  const { data } = useQuery(["Themes"], getThemes);
+  const { data } = useQuery(["Themes"], getThemes, {
+    staleTime: 0,
+    cacheTime: 300000,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
+    refetchOnWindowFocus: true,
+  });
   console.log("데이터", data);
   const router = useRouter();
   const onClickMoveToQuizPage = (themeId) => () => {

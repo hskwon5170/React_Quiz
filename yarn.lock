@@ -2437,6 +2437,7 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
     react-query: ^3.39.2
+    react-use-precision-timer: ^1.0.8
     recoil: ^0.7.5
     typescript: 4.8.4
   languageName: unknown
@@ -2476,6 +2477,16 @@ __metadata:
     react-native:
       optional: true
   checksum: 83b199e66af28ab67ec4d22e51da42f02447186623db926b75d27a1c09a3383da6ddc9e5b83d82578fac7abdba7e6f265aecbffdb91db61981950d3d59409346
+  languageName: node
+  linkType: hard
+
+"react-use-precision-timer@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "react-use-precision-timer@npm:1.0.8"
+  peerDependencies:
+    react: ">=16"
+    react-dom: ">=16"
+  checksum: 5e5d3aaf733e281e54009158cbe8775e111dee49fcbb443c4ce056331785fdb30c3f36ee9769ca8c5a6f62170884d43f69021945a41ee5d6d70ac4ace204c53b
   languageName: node
   linkType: hard
 

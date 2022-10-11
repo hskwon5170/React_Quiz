@@ -10,6 +10,11 @@ const queryClient = new QueryClient({
       onError: (error) => {
         error instanceof Error ? alert(error.message) : alert("접속장애");
       },
+      staleTime: 600000,
+      cacheTime: 900000,
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+      refetchOnWindowFocus: false,
     },
     mutations: {
       onError: (error) => {
