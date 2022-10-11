@@ -19,24 +19,25 @@ export const Section = styled.div`
 
 export const QuizStart = styled.h3`
   font-size: 4em;
-  color: forestgreen;
+  color: white;
+  font-weight: bold;
   text-align: center;
 `;
 
 export const QuizStartButton = styled.button`
-  cursor: pointer;
-  width: 10em;
-  height: 3em;
-  font-size: 1.4em;
-  margin: auto;
-  outline: none;
+  border-radius: 500px;
+  background-color: #50ffb0;
+  color: #2941ab;
+  line-height: 20px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: normal;
+  width: 189px;
+  height: 48px;
   border: none;
-  border-radius: 10px;
-  background-color: darkgray;
-  color: black;
+  cursor: pointer;
+  transition: transform 0.2s; /* Animation */
   :hover {
-    background-color: forestgreen;
-    color: whitesmoke;
+    transform: scale(1.5);
   }
-  transition: all 250ms;
 `;

@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useQuery } from "react-query";
-import { useStopwatch } from "react-use-precision-timer";
+import { useStopwatch } from "react-timer-hook";
 import QuizUI from "./quiz.detail.presenter";
 import { getQuizByTheme } from "./quiz.query";
 

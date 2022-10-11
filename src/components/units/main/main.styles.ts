@@ -36,7 +36,7 @@ export const Themes = styled.div`
   width: 20%;
   height: 14em;
   padding: 1em;
-  background-color: black;
+  background-color: #0d008e;
   border-radius: 10px;
   cursor: pointer;
   color: white;
@@ -46,8 +46,15 @@ export const Themes = styled.div`
   justify-content: center;
   text-align: center;
   font-size: 1em;
-  :hover {
+  /* :hover {
     transform: translateY(-16px);
   }
-  transition: all 250ms ease-in;
+  transition: all 250ms ease-in; */
+  transition: transform 0.2s; /* Animation */
+  :hover {
+    transform: scale(1.1);
+    background-color: #50ffb0;
+    color: #0d008e;
+    font-weight: bold;
+  }
 `;

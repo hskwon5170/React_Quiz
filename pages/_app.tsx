@@ -3,6 +3,8 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { RecoilRoot } from "recoil";
 import "../styles/globals.css";
+import "antd/dist/antd.css";
+import "react-quill/dist/quill.snow.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {

@@ -48,9 +48,11 @@ export default function QuizResultUI(props) {
 
   return (
     <S.Wrapper>
-      <div>소요된시간</div>
-      <div>{`${timeRecord.hours}시:${timeRecord.minutes}분:${timeRecord.seconds}초`}</div>
-      <div>--------</div>
+      <S.Title>퀴즈 결과</S.Title>
+      <S.TimeUsage>
+        소요시간 :{" "}
+        {`${timeRecord.hours}시:${timeRecord.minutes}분:${timeRecord.seconds}초`}
+      </S.TimeUsage>
 
       <S.ChartWrapper>
         <VictoryPie
@@ -60,8 +62,12 @@ export default function QuizResultUI(props) {
           data={graphicData}
         />
       </S.ChartWrapper>
-      <div onClick={props.onClickMoveToRetryPage}>처음부터 다시풀기</div>
-      <div onClick={props.onClickMoveToReviewNotePage}>오답노트</div>
+      <S.ButtonWrapper>
+        <S.Button onClick={props.onClickMoveToRetryPage}>다시풀기</S.Button>
+        <S.Button onClick={props.onClickMoveToReviewNotePage}>
+          오답노트
+        </S.Button>
+      </S.ButtonWrapper>
     </S.Wrapper>
   );
 }

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import {
   correctAnswersState,
@@ -22,6 +22,7 @@ export default function QuizItem(props) {
   const [inCorrectAnswerCounter, setInCorrectAnswerCounter] = useRecoilState(
     inCorrectAnswersState
   );
+  const [stage, setStage] = useState<number>(1);
 
   const onClickMoveToNextQuestion = (Questions) => () => {
     if (pickedAnswer === props.quiz.correct_answer) {
@@ -44,9 +45,9 @@ export default function QuizItem(props) {
       router.push("/quiz/result");
       props.pause();
       setTimeRecord({
-        hours: props.hours,
-        minutes: props.minutes,
-        seconds: props.seconds,
+        hours: String(props.hours),
+        minutes: String(props.minutes),
+        seconds: String(props.seconds),
       });
     }
   };

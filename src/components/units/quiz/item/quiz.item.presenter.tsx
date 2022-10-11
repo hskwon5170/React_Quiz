@@ -3,13 +3,16 @@ import lottie from "lottie-web";
 import { useRecoilState } from "recoil";
 import { pickedAnswerState } from "../../../../commons/store";
 import QuizButtonUI from "./quiz.button.presenter";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import QuizTimer from "../../../commons/quizTimer";
 export default function QuizItemUI(props) {
   const [pickedAnswer] = useRecoilState(pickedAnswerState);
   const retryingAnswers = props.retryingData?.map(
     (Answers) => Answers.incorrect_answers
   );
   const correctContainer = useRef(null);
+  const timeRef = useRef<number>(0);
+
   useEffect(() => {
     lottie.loadAnimation({
       container: correctContainer.current,
@@ -36,6 +39,8 @@ export default function QuizItemUI(props) {
         <S.Section>
           <S.Wrapper>
             <S.QuestionTitle>문제 {props.index + 1}</S.QuestionTitle>
+            <QuizTimer timeRef={timeRef} />
+            {/* <S.StateBar state={props.index / props.stage} /> */}
             <S.Question>
               {props.quiz.question
                 .replace(/&quot;/g, '"')
@@ -54,7 +59,7 @@ export default function QuizItemUI(props) {
             {(pickedAnswer === props.quiz.correct_answer && (
               <S.LottieWrapper>
                 <S.Lottie className="correctContainer" ref={correctContainer} />
-                <S.Status>정답입니다</S.Status>
+                <S.Status>정답이예요!</S.Status>
               </S.LottieWrapper>
             )) ||
               (props.quiz.incorrect_answers.includes(pickedAnswer) && (
@@ -64,10 +69,9 @@ export default function QuizItemUI(props) {
                     ref={incorrectContainer}
                   />
 
-                  <S.Status>오답입니다</S.Status>
+                  <S.Status>틀렸어요</S.Status>
                 </S.LottieWrapper>
               ))}
-
             <S.NextButton
               inFinished={pickedAnswer}
               onClick={props.onClickMoveToNextQuestion(props.quiz)}

@@ -17,6 +17,7 @@
     "react-dom": "18.2.0",
     "react-query": "^3.39.2",
     "react-quill": "^2.0.0",
+    "react-timer-hook": "^3.0.5",
     "react-use-precision-timer": "^1.0.8",
     "recoil": "^0.7.5",
     "victory": "^36.6.8"
