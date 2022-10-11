@@ -5,6 +5,7 @@ import { RecoilRoot } from "recoil";
 import "../styles/globals.css";
 import "antd/dist/antd.css";
 import "react-quill/dist/quill.snow.css";
+import Layout from "../src/components/commons/layout";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,7 +31,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
       </QueryClientProvider>
     </RecoilRoot>
