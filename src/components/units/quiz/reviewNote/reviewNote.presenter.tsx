@@ -5,7 +5,7 @@ import ReviewItem from "./reviewItem.container";
 
 export default function ReviewNoteUI(props) {
   const [reviewNote] = useRecoilState(reviewNoteState);
-
+  console.log("리뷰노트", reviewNote);
   return (
     <S.Section>
       <S.Title>오답 노트</S.Title>
@@ -19,7 +19,7 @@ export default function ReviewNoteUI(props) {
       ))}
       {props.isWriting ? (
         <S.ReviewDetailButtons onClick={props.onClickMoveToReviewNote}>
-          오답 노트!!
+          오답 노트
         </S.ReviewDetailButtons>
       ) : (
         ""

@@ -6,6 +6,7 @@ export default function ReviewNote(props) {
   const onClickMoveToReviewNote = () => {
     router.push("/quiz/reviewNote/detail");
   };
+
   return (
     <ReviewNoteUI
       isWriting={props.isWriting}

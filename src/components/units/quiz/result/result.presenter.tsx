@@ -14,14 +14,15 @@ export default function QuizResultUI(props) {
     <div>
       <div>소요된시간</div>
       <div>{`${timeRecord.hours}시:${timeRecord.minutes}분:${timeRecord.seconds}초`}</div>
-      <div>정답</div>
+      <div>--------</div>
+      <div>내가 맞힌 갯수</div>
       <div>{correctAnswerCounter.length}개</div>
       <div>--------</div>
-      <div>오답</div>
+      <div>내가 틀린 갯수</div>
       <div>{inCorrectAnswerCounter.length - 1}개</div>
       <div>--------</div>
-      <div onClick={props.onClickMoveToRetryPage}>다시풀기</div>
-      <div>오답노트</div>
+      <div onClick={props.onClickMoveToRetryPage}>처음부터 다시풀기</div>
+      <div onClick={props.onClickMoveToReviewNotePage}>오답노트</div>
     </div>
   );
 }

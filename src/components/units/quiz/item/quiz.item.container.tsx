@@ -6,12 +6,14 @@ import {
   inCorrectAnswersState,
   indexCounterState,
   pickedAnswerState,
+  reviewNoteState,
   timeRecordState,
 } from "../../../../commons/store";
 import QuizItemUI from "./quiz.item.presenter";
 
 export default function QuizItem(props) {
   const router = useRouter();
+  const [reviewNote, setReviewNote] = useRecoilState(reviewNoteState);
   const [indexCounter, setIndexCounter] = useRecoilState(indexCounterState);
   const [pickedAnswer, setPickedAnswer] = useRecoilState(pickedAnswerState);
   const [, setTimeRecord] = useRecoilState(timeRecordState);
@@ -26,10 +28,14 @@ export default function QuizItem(props) {
       const correctAnswers = [...correctAnswerCounter];
       correctAnswers.push(pickedAnswer);
       setCorrectAnswerCounter(correctAnswers);
+      // console.log("correct", correctAnswers);
     } else {
+      const reviewData = [...reviewNote, Questions];
+      setReviewNote(reviewData);
       const inCorrectAnswers = [...inCorrectAnswerCounter];
       inCorrectAnswers.push(pickedAnswer);
       setInCorrectAnswerCounter(inCorrectAnswers);
+      // console.log("inCorrect", inCorrectAnswers);
     }
 
     setIndexCounter(indexCounter + 1);
