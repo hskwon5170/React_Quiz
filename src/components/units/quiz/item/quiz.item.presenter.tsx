@@ -13,7 +13,12 @@ export default function QuizItemUI(props) {
         <S.Section>
           <S.Wrapper>
             <S.QuestionTitle>문제 {props.index + 1}</S.QuestionTitle>
-            <S.Question>{props.quiz.question}</S.Question>
+            <S.Question>
+              {props.quiz.question
+                .replace(/&quot;/g, '"')
+                .replace(/&#039;/g, "'")
+                .replace(/&rsquo;/g, "'")}
+            </S.Question>
             <S.Question>
               {props.isRetrying
                 ? retryingAnswers[props.indexCounter].map((answer, index) => (
