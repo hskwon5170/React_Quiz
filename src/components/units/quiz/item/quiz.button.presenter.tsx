@@ -5,6 +5,7 @@ import * as S from "./quiz.item.styles";
 export default function QuizButtonUI(props) {
   const [isClicked, setIsClicked] = useState(false);
   const [pickedAnswer, setPickedAnswer] = useRecoilState(pickedAnswerState);
+
   const onClickAnswer = (event) => {
     setIsClicked(true);
     setPickedAnswer(event.target.innerText);

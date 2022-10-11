@@ -11,7 +11,7 @@ export const Section = styled.section`
 export const QuestionTitle = styled.h3`
   align-self: flex-start;
 `;
-export const Form = styled.form`
+export const Wrapper = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;

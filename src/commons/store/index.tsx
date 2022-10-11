@@ -28,3 +28,19 @@ export const inCorrectAnswersState = atom({
   key: "inCorrectAnswersState",
   default: [""],
 });
+export const isLoadedState = atom({
+  key: "isLoadedState",
+  default: false,
+});
+export const reviewNoteState = atom({
+  key: "reviewNoteState",
+  default: [],
+});
+export const reviewNoteWritingState = atom({
+  key: "reviewNoteWritingState",
+  default: [],
+});
+export const reviewNoteValueState = atom({
+  key: "reviewNoteValueState",
+  default: [],
+});

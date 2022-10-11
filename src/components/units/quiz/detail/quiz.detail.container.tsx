@@ -5,7 +5,7 @@ import { useStopwatch } from "react-use-precision-timer";
 import QuizUI from "./quiz.detail.presenter";
 import { getQuizByTheme } from "./quiz.query";
 
-export default function Quiz() {
+export default function Quiz(props) {
   const [isClicked, setIsClicked] = useState(false);
   const { seconds, minutes, hours, pause } = useStopwatch({ autoStart: true });
   const router = useRouter();
@@ -26,6 +26,8 @@ export default function Quiz() {
       minutes={minutes}
       hours={hours}
       pause={pause}
+      isRetrying={props.isRetrying}
+      retryingData={props.retryingData}
     />
   );
 }

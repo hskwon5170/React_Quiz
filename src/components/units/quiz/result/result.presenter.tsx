@@ -6,7 +6,7 @@ import {
   timeRecordState,
 } from "../../../../commons/store";
 
-export default function QuizResultUI() {
+export default function QuizResultUI(props) {
   const [timeRecord] = useRecoilState(timeRecordState);
   const [correctAnswerCounter] = useRecoilState(correctAnswersState);
   const [inCorrectAnswerCounter] = useRecoilState(inCorrectAnswersState);
@@ -20,7 +20,7 @@ export default function QuizResultUI() {
       <div>오답</div>
       <div>{inCorrectAnswerCounter.length - 1}개</div>
       <div>--------</div>
-      <div>다시풀기</div>
+      <div onClick={props.onClickMoveToRetryPage}>다시풀기</div>
       <div>오답노트</div>
     </div>
   );
