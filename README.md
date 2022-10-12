@@ -24,19 +24,13 @@ git clone git@github.com:hskwon5170/React_Quiz.git
 yarn install
 ```
 
-3. build
+3. 실행
 
 ```bash
-yarn build
+yarn dev
 ```
 
-4. start
-
-```bash
-yarn start
-```
-
-5. test
+4. test
 
 ```bash
 yarn test
