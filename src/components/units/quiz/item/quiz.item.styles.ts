@@ -129,8 +129,8 @@ export const NextButton = styled.button`
   border: none;
   outline: none;
   background-color: ${(props: NextButtonEmotionProps) =>
-    props.isClicked ? "yellow" : "#d4d4d444"};
-  color: ${(props) => (props.isClicked ? "black" : "white")};
+    props.isClicked ? "yellow" : "transparent"};
+  color: ${(props) => (props.isClicked ? "black" : "transparent")};
   font-weight: bolder;
   transition: all 250ms;
   @media ${breakPoints.tablet} {
