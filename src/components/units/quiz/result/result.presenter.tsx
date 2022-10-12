@@ -58,7 +58,7 @@ export default function QuizResultUI(props) {
         <VictoryPie
           animate={{ duration: 500 }}
           style={{ labels: { fill: "#fff" } }}
-          colorScale={["#00c896", "#d4d4d444"]}
+          colorScale={["#FFBB00", "#d4d4d444"]}
           data={graphicData}
         />
       </S.ChartWrapper>

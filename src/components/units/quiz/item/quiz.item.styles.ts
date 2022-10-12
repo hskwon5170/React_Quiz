@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../styles/media";
 
 export const Section = styled.section`
   /* max-width: 1400px; */
@@ -10,12 +11,22 @@ export const Section = styled.section`
   justify-content: center;
   align-items: center;
   margin-top: 3em;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    font-size: 0.8em;
+  }
+  @media ${breakPoints.tablet} {
+    margin-bottom: 30px;
+  }
 `;
 export const QuestionTitle = styled.h3`
   align-self: flex-start;
   color: white;
   font-weight: bold;
   font-size: 1.6rem;
+  @media ${breakPoints.mobile} {
+    font-size: 2.5em;
+  }
 `;
 
 export const StateBar = styled.div`
@@ -54,6 +65,9 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   /* gap: 3em; */
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 export const Question = styled.pre`
   white-space: pre-wrap;
@@ -61,6 +75,14 @@ export const Question = styled.pre`
   font-size: 1.5em;
   color: white;
   /* font-weight: 600; */
+  @media ${breakPoints.mobile} {
+    font-size: 1.5em;
+  }
+  @media ${breakPoints.tablet} {
+    margin-top: 1.3em;
+    width: 100%;
+    font-size: 2.3rem;
+  }
 `;
 export const ButtonBox = styled.div`
   width: 100%;
@@ -73,7 +95,7 @@ export const Buttons = styled.button`
   width: 100%;
   height: 3em;
   font-size: 1.2em;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px;
   border: none;
   outline: none;
   background-color: ${(props) => (props.isClicked ? "#50ffb0" : "darkgray")};
@@ -84,6 +106,12 @@ export const Buttons = styled.button`
     color: #0d008e;
   }
   transition: all 250ms;
+  @media ${breakPoints.mobile} {
+    font-size: 1em;
+  }
+  @media ${breakPoints.tablet} {
+    font-size: 1.7rem;
+  }
 `;
 export const NextButton = styled.button`
   cursor: pointer;
@@ -97,11 +125,11 @@ export const NextButton = styled.button`
   background-color: ${(props) => (props.isClicked ? "yellow" : "#d4d4d444")};
   color: ${(props) => (props.isClicked ? "black" : "white")};
   font-weight: bolder;
-  /* :hover {
-    background-color: #0d008e;
-    color: #50ffb0;
-  } */
   transition: all 250ms;
+  @media ${breakPoints.tablet} {
+    height: 3.4em;
+    width: 5.3em;
+  }
 `;
 
 export const FlexWrapper = styled.div`

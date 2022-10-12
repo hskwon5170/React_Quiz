@@ -19,7 +19,7 @@ export default function ReviewNoteUI(props) {
       ))}
       {props.isWriting ? (
         <S.ReviewDetailButtons onClick={props.onClickMoveToReviewNote}>
-          오답 노트
+          작성한 오답노트
         </S.ReviewDetailButtons>
       ) : (
         ""

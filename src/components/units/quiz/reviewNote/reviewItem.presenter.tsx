@@ -67,13 +67,10 @@ export default function ReviewItemUI(props) {
                       .replace(/&rsquo;/g, "'")}
                   </span>
                 </S.FlexWrapper>
-                {/* <span>{props.review.correct_answer}</span> */}
-                {/* {`${index + 1}. ${answers} ${props.review.correct_answer}`} */}
               </S.WrongQuestionAnswerChoice>
             </>
           ))}
         </S.WrongQuestionAnswerChoiceBox>
-        {/* <div>정답:{props.review.correct_answer}</div> */}
         <S.MyPickedAnswer>
           내가 고른 답 :
           {inCorrectAnswerCounter.map((myanswer) =>
@@ -82,7 +79,11 @@ export default function ReviewItemUI(props) {
         </S.MyPickedAnswer>
       </S.WrongAnswerBox>
       <S.MemoBox>
-        <S.NoteTitle>오답노트를 작성하세요 👨‍💻</S.NoteTitle>
+        {props.isWriting ? (
+          <S.NoteTitle>오답노트를 작성하세요 👨‍💻</S.NoteTitle>
+        ) : (
+          <S.NoteTitle>내가 작성한 오답노트예요 👨‍💻</S.NoteTitle>
+        )}
         {props.isWriting ? (
           <ReactQuill
             theme="snow"

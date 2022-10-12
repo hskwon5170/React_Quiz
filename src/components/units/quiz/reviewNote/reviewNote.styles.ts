@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Rate } from "antd";
+import { breakPoints } from "../../../../../styles/media";
 export const Section = styled.section`
   width: 100%;
   display: flex;
@@ -26,6 +27,9 @@ export const Wrapper = styled.div`
   padding: 2em;
   margin-bottom: 5em;
   border-bottom: 2px solid white;
+  @media ${breakPoints.mobile} {
+    margin: 0;
+  }
 `;
 export const WrongAnswerBox = styled.div`
   width: 100%;
@@ -43,6 +47,12 @@ export const Category = styled.div`
   background-color: #0d008e;
   display: flex;
   align-items: center;
+  @media ${breakPoints.tablet} {
+    font-size: 1.6rem;
+  }
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const TopWrapper = styled.div`
@@ -61,6 +71,9 @@ export const WrongQuestion = styled.pre`
   white-space: pre-wrap;
   font-size: 2.2em;
   padding: 20px;
+  @media ${breakPoints.mobile} {
+    font-size: 1.2em;
+  }
 `;
 export const WrongQuestionOptions = styled.div`
   display: flex;
@@ -80,6 +93,10 @@ export const WrongQuestionDifficulty = styled.div`
   width: fit-content;
   padding: 0.5rem 1rem;
   background-color: #0d008e;
+  @media ${breakPoints.mobile} {
+    margin-left: 10px;
+    background-color: transparent;
+  }
 `;
 export const DifficultyTitle = styled.span`
   font-size: 1em;
@@ -122,6 +139,16 @@ export const WrongQuestionAnswerChoice = styled.div`
 
 export const FlexWrapper = styled.div`
   display: flex;
+
+  @media ${breakPoints.tablet} {
+    display: flex;
+    align-items: center;
+  }
+  span {
+    @media ${breakPoints.tablet} {
+      font-size: 1.6rem;
+    }
+  }
 `;
 
 export const MyPickedAnswer = styled.div`
@@ -132,6 +159,9 @@ export const MyPickedAnswer = styled.div`
   width: fit-content;
   padding: 0.5rem 1rem;
   background-color: #fe6768aa;
+  @media ${breakPoints.tablet} {
+    font-size: 1.3rem;
+  }
 `;
 export const MemoBox = styled.div`
   width: 100%;
@@ -144,6 +174,9 @@ export const NoteTitle = styled.span`
   font-size: 1.3em;
   font-weight: 600;
   color: white;
+  @media ${breakPoints.tablet} {
+    font-size: 1.6rem;
+  }
 `;
 export const ButtonBox = styled.div`
   width: 50%;
@@ -167,21 +200,31 @@ export const SaveButton = styled.button`
     transform: scale(1.2);
   }
   transition: all 250ms ease-in;
+  @media ${breakPoints.tablet} {
+    font-size: 1.6rem;
+  }
 `;
 export const ReviewDetailButtons = styled.button`
-  cursor: pointer;
-  width: 6em;
-  height: 3em;
-  font-size: 1.4em;
   margin-bottom: 3em;
-  outline: none;
-  border: none;
+  cursor: pointer;
+  width: 10%;
+  height: 3em;
+  font-size: 1.2em;
+  font-weight: bold;
   border-radius: 10px;
-  background-color: darkgray;
-  color: black;
+  border: none;
+  outline: none;
+  background-color: #0d008e;
+  color: #50ffb0;
   :hover {
-    background-color: forestgreen;
-    color: whitesmoke;
+    transform: scale(1.2);
   }
-  transition: all 250ms;
+  transition: all 250ms ease-in;
+  @media ${breakPoints.mobile} {
+    width: 50%;
+  }
+  @media ${breakPoints.tablet} {
+    width: 30%;
+    font-size: 1.9rem;
+  }
 `;

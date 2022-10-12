@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../styles/media";
 
 export const Wrapper = styled.div`
   margin: 0 auto;
@@ -7,6 +8,10 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    max-width: none;
+    width: 100%;
+  }
 `;
 
 export const Title = styled.div`
@@ -24,6 +29,13 @@ export const TimeUsage = styled.div`
   display: flex;
   justify-content: center;
   margin: 20px;
+  @media ${breakPoints.tablet} {
+    width: 60%;
+    font-size: 2rem;
+  }
+  @media ${breakPoints.mobile} {
+    width: 80%;
+  }
 `;
 
 export const ChartWrapper = styled.div`
@@ -31,10 +43,16 @@ export const ChartWrapper = styled.div`
   max-width: 700px;
   width: 100%;
   aspect-ratio: 1.5;
+  @media ${breakPoints.tablet} {
+    max-width: 1000px;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
   display: flex;
+  @media ${breakPoints.tablet} {
+    margin-top: 3rem;
+  }
 `;
 
 export const Button = styled.div`
@@ -56,5 +74,14 @@ export const Button = styled.div`
     background-color: #50ffb0;
     color: #0d008e;
     font-weight: bold;
+  }
+  @media ${breakPoints.tablet} {
+    font-size: 1.8rem;
+    height: 3.4rem;
+    padding: 30px;
+  }
+  @media ${breakPoints.mobile} {
+    width: 8rem;
+    font-size: 1.3rem;
   }
 `;

@@ -23,7 +23,7 @@ export default function QuizButtonUI(props) {
     });
   };
   return (
-    <>
+    <S.ButtonBox>
       <S.Buttons
         isClicked={isClicked}
         onClick={pickedAnswer ? onClickAlert : onClickAnswer}
@@ -33,6 +33,6 @@ export default function QuizButtonUI(props) {
           .replace(/&#039;/g, "'")
           .replace(/&rsquo;/g, "'")}
       </S.Buttons>
-    </>
+    </S.ButtonBox>
   );
 }
