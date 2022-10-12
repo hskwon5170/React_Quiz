@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 html,
 body {
-  /* min-height: 100vh; */
+  height: 100vh;
   background: linear-gradient(180deg, #00006f 0%, #6cffff 100%);
   background-attachment: fixed;
   color: #fff;

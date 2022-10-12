@@ -1,6 +1,6 @@
 html,
-body {
-  /* min-height: 100vh; */
+/* body {
+  min-height: 100vh;
   background: linear-gradient(180deg, #00006f 0%, #6cffff 100%);
   background-attachment: fixed;
   color: #fff;
@@ -8,7 +8,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Noto Sans KR", sans-serif;
-}
+} */
 
 a {
   color: inherit;
