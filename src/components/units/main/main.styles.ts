@@ -30,7 +30,7 @@ export const FlexWrapper = styled.div`
   display: flex;
   position: relative;
   bottom: 1rem;
-  width: 20%;
+  width: 20.1%;
   justify-content: center;
   align-items: center;
   margin-bottom: 3rem;
