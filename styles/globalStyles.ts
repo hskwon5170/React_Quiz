@@ -24,7 +24,7 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -32,6 +32,6 @@ a {
     color: white;
     background: black;
   }
-}
+} */
 `;
 export default GlobalStyle;
