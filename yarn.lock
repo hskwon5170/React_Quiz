@@ -2958,6 +2958,7 @@ __metadata:
     react-timer-hook: ^3.0.5
     react-use-precision-timer: ^1.0.8
     recoil: ^0.7.5
+    sweetalert2: ^11.5.1
     typescript: 4.8.4
     victory: ^36.6.8
   languageName: unknown
@@ -3962,6 +3963,13 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 53b1e247e68e05db7b3808b99b892bd36fb096e6fba213a06da7fab22045e97597db425c724f2bbd6c99a3c295e1e73f3e4de78592289f38431049e1277ca0ae
+  languageName: node
+  linkType: hard
+
+"sweetalert2@npm:^11.5.1":
+  version: 11.5.1
+  resolution: "sweetalert2@npm:11.5.1"
+  checksum: 075a16891d09b462e0fc7fed52ac776c225383ae7597cab557d65f93573eb7a8c58689fcdc8316288bd323f940bdd6b3393cd967fd5d523a998a0e4dd2261237
   languageName: node
   linkType: hard
 

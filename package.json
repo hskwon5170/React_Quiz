@@ -20,6 +20,7 @@
     "react-timer-hook": "^3.0.5",
     "react-use-precision-timer": "^1.0.8",
     "recoil": "^0.7.5",
+    "sweetalert2": "^11.5.1",
     "victory": "^36.6.8"
   },
   "devDependencies": {
