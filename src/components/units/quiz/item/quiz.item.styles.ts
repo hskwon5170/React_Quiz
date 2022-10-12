@@ -171,4 +171,5 @@ export const Status = styled.div`
   font-size: 1.3rem;
   width: 100%;
   margin-left: 1rem;
+  color: black;
 `;
