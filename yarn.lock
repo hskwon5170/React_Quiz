@@ -4257,6 +4257,7 @@ __metadata:
     react-use-precision-timer: ^1.0.8
     recoil: ^0.7.5
     styled-components: ^5.3.6
+    styled-reset: ^4.4.2
     sweetalert2: ^11.5.1
     typescript: 4.8.4
     victory: ^36.6.8
@@ -5378,6 +5379,15 @@ __metadata:
     babel-plugin-macros:
       optional: true
   checksum: 61959993915f4b1662a682dbbefb3512de9399cf6901969bcadd26ba5441d2b5ca5c1021b233bbd573da2541b41efb45d56c6f618dbc8d88a381ebc62461fefe
+  languageName: node
+  linkType: hard
+
+"styled-reset@npm:^4.4.2":
+  version: 4.4.2
+  resolution: "styled-reset@npm:4.4.2"
+  peerDependencies:
+    styled-components: ">=4.0.0 || >=5.0.0"
+  checksum: 1ee15f63911795d612548d9c77840c0b055ddb168199fb2b6147ab15a5e1a7ce67df573b224c4cabd98f303c61fd05100f9c3653ac011098f7d09b8118226183
   languageName: node
   linkType: hard
 

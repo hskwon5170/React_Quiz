@@ -1,9 +1,11 @@
 import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
 
 const GlobalStyle = createGlobalStyle`
-html,
+    ${reset}
+
 body {
-  height: 100vh;
+min-height: 100vh;
   background: linear-gradient(180deg, #00006f 0%, #6cffff 100%);
   background-attachment: fixed;
   color: #fff;
@@ -14,7 +16,7 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -22,7 +24,7 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -30,6 +32,6 @@ a {
     color: white;
     background: black;
   }
-}
+} */
 `;
 export default GlobalStyle;

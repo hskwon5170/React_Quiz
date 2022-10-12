@@ -24,6 +24,7 @@
     "react-use-precision-timer": "^1.0.8",
     "recoil": "^0.7.5",
     "styled-components": "^5.3.6",
+    "styled-reset": "^4.4.2",
     "sweetalert2": "^11.5.1",
     "victory": "^36.6.8"
   },
