@@ -6,6 +6,7 @@ import "../styles/globals.css";
 import "antd/dist/antd.css";
 import "react-quill/dist/quill.snow.css";
 import Layout from "../src/components/commons/layout";
+import GlobalStyle from "../styles/globalStyles";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,6 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
+        <GlobalStyle />
         <Layout>
           <Component {...pageProps} />
         </Layout>
