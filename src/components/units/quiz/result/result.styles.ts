@@ -26,9 +26,12 @@ export const TimeUsage = styled.div`
   font-weight: 700;
   border-radius: 30px;
   width: 20%;
+  height: 2.5rem;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 20px;
+  color: black;
   @media ${breakPoints.tablet} {
     width: 60%;
     font-size: 2rem;
