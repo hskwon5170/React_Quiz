@@ -76,6 +76,8 @@ export default function QuizItem(props: QuizItemProps) {
       onClickAnswer={onClickAnswer}
       isClicked={isClicked}
       isFinished={false}
+      key={0}
+      // answer={""}
     />
   );
 }

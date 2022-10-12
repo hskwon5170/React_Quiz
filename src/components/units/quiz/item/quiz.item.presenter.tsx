@@ -59,8 +59,6 @@ export default function QuizItemUI(props: QuizItemUIProps) {
                       key={index}
                       answer={answer}
                       index={index}
-                      onClickAnswer={undefined}
-                      isFinished={undefined}
                       isClicked={false}
                     />
                   ))
@@ -69,8 +67,6 @@ export default function QuizItemUI(props: QuizItemUIProps) {
                       key={index}
                       answer={answer}
                       index={index}
-                      onClickAnswer={undefined}
-                      isFinished={undefined}
                       isClicked={false}
                     />
                   ))}
@@ -99,7 +95,7 @@ export default function QuizItemUI(props: QuizItemUIProps) {
             <S.NextButton
               isFinished={pickedAnswer}
               onClick={props.onClickMoveToNextQuestion(props.quiz)}
-              onClickAnswer={props.onClickAnswer}
+              // onClickAnswer={props.onClickAnswer}
               isClicked={props.isClicked}
             >
               다음 {">"}

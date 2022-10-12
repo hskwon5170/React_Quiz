@@ -1,4 +1,5 @@
 import { Data } from "../detail/quiz.datail.types";
+
 export type Questions = {
   category: string;
   correct_answer: string;
@@ -28,7 +29,7 @@ export type QuizItemUIProps = {
   index: number;
   Answers: any;
   onClickAnswer: any;
-  isClicked: any;
+  isClicked: boolean;
   isFinished: boolean;
 };
 
@@ -36,12 +37,12 @@ export type QuizButtonUIProps = {
   key: number;
   answer: string;
   index: number;
-  onClickAnswer: any;
-  isFinished: any;
   isClicked: boolean;
 };
 export type ItemEmotionProps = {
   isClicked: boolean;
+};
+export type NextButtonEmotionProps = {
+  isClicked: boolean;
   isFinished: any;
-  onClickAnswer: any;
 };
