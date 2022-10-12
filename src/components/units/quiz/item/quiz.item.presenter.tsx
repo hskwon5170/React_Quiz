@@ -5,7 +5,9 @@ import { pickedAnswerState } from "../../../../commons/store";
 import QuizButtonUI from "./quiz.button.presenter";
 import { useEffect, useRef, useState } from "react";
 import QuizTimer from "../../../commons/quizTimer";
-export default function QuizItemUI(props) {
+import { QuizItemUIProps } from "./quiz.item.types";
+
+export default function QuizItemUI(props: QuizItemUIProps) {
   const [pickedAnswer] = useRecoilState(pickedAnswerState);
   const retryingAnswers = props.retryingData?.map(
     (Answers) => Answers.incorrect_answers
@@ -53,10 +55,24 @@ export default function QuizItemUI(props) {
             <S.Question onClick={props.onClickAnswer}>
               {props.isRetrying
                 ? retryingAnswers[props.indexCounter].map((answer, index) => (
-                    <QuizButtonUI key={index} answer={answer} index={index} />
+                    <QuizButtonUI
+                      key={index}
+                      answer={answer}
+                      index={index}
+                      onClickAnswer={undefined}
+                      isFinished={undefined}
+                      isClicked={false}
+                    />
                   ))
                 : props.Answers[props.indexCounter].map((answer, index) => (
-                    <QuizButtonUI key={index} answer={answer} index={index} />
+                    <QuizButtonUI
+                      key={index}
+                      answer={answer}
+                      index={index}
+                      onClickAnswer={undefined}
+                      isFinished={undefined}
+                      isClicked={false}
+                    />
                   ))}
             </S.Question>
             <S.StatusWrap>
@@ -81,7 +97,7 @@ export default function QuizItemUI(props) {
                 ))}
             </S.StatusWrap>
             <S.NextButton
-              inFinished={pickedAnswer}
+              isFinished={pickedAnswer}
               onClick={props.onClickMoveToNextQuestion(props.quiz)}
               onClickAnswer={props.onClickAnswer}
               isClicked={props.isClicked}

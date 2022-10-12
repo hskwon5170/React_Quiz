@@ -1,6 +1,7 @@
+import { QuizStartUIProps } from "./quiz.datail.types";
 import * as S from "./quiz.detail.styles";
 
-export default function QuizStartUI(props) {
+export default function QuizStartUI(props: QuizStartUIProps) {
   return (
     <S.Section>
       <S.QuizStart>퀴즈 시작</S.QuizStart>

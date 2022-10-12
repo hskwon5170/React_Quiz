@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../../styles/media";
+import { ItemEmotionProps, QuizButtonUIProps } from "./quiz.item.types";
 
 export const Section = styled.section`
   /* max-width: 1400px; */
@@ -98,7 +99,8 @@ export const Buttons = styled.button`
   border-radius: 10px;
   border: none;
   outline: none;
-  background-color: ${(props) => (props.isClicked ? "#50ffb0" : "darkgray")};
+  background-color: ${(props: QuizButtonUIProps) =>
+    props.isClicked ? "#50ffb0" : "darkgray"};
   color: black;
   margin-bottom: 15px;
   :hover {
@@ -122,7 +124,8 @@ export const NextButton = styled.button`
   border-radius: 10px;
   border: none;
   outline: none;
-  background-color: ${(props) => (props.isClicked ? "yellow" : "#d4d4d444")};
+  background-color: ${(props: ItemEmotionProps) =>
+    props.isClicked ? "yellow" : "#d4d4d444"};
   color: ${(props) => (props.isClicked ? "black" : "white")};
   font-weight: bolder;
   transition: all 250ms;

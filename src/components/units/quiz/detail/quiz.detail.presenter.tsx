@@ -2,7 +2,8 @@ import * as S from "./quiz.detail.styles";
 import QuizItem from "../item/quiz.item.container";
 import QuizStartUI from "./quiz.start.presenter";
 import Quiz from "./quiz.detail.container";
-export default function QuizUI(props) {
+import { QuizUIProps } from "./quiz.datail.types";
+export default function QuizUI(props: QuizUIProps) {
   return (
     <S.Wrapper>
       {!props.isClicked && (

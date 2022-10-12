@@ -2,10 +2,11 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { useQuery } from "react-query";
 import { useStopwatch } from "react-timer-hook";
+import { QuizProps } from "./quiz.datail.types";
 import QuizUI from "./quiz.detail.presenter";
 import { getQuizByTheme } from "./quiz.query";
 
-export default function Quiz(props) {
+export default function Quiz(props: QuizProps) {
   const [isClicked, setIsClicked] = useState(false);
   const { seconds, minutes, hours, pause } = useStopwatch({ autoStart: true });
   const router = useRouter();

@@ -10,8 +10,9 @@ import {
   timeRecordState,
 } from "../../../../commons/store";
 import QuizItemUI from "./quiz.item.presenter";
+import { QuizItemProps } from "./quiz.item.types";
 
-export default function QuizItem(props) {
+export default function QuizItem(props: QuizItemProps) {
   const router = useRouter();
   const [reviewNote, setReviewNote] = useRecoilState(reviewNoteState);
   const [indexCounter, setIndexCounter] = useRecoilState(indexCounterState);
@@ -74,6 +75,7 @@ export default function QuizItem(props) {
       isRetrying={props.isRetrying}
       onClickAnswer={onClickAnswer}
       isClicked={isClicked}
+      isFinished={false}
     />
   );
 }
