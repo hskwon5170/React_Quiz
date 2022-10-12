@@ -96,12 +96,20 @@ yarn test
 ---
 
 ## 시연 영상
-1.메인페이지![Oct-12-2022 15-21-14](https://user-images.githubusercontent.com/104052466/195265324-f70a899d-7d23-44cf-add5-decc833eb038.gif)
+1.메인페이지
+- 사용자가 원하는 퀴즈의 카테고리를 설정할 수 있습니다.
+![Oct-12-2022 15-21-14](https://user-images.githubusercontent.com/104052466/195265324-f70a899d-7d23-44cf-add5-decc833eb038.gif)
+
 
 2.퀴즈 풀기 페이지
+- 퀴즈의 카테고리를 설정한 이후, GO 버튼을 눌러 퀴즈를 풀 수 있습니다.
+- 사용자는 문항에 대한 답안을 4개 보기 중에 선택할 수 있습니다.
+- 답안을 선택하면 맞았는지 틀렸는지 결과를 바로 알 수 있습니다.
+- 답안을 선택해야 다음 문제로 넘어갈 수 있습니다.
 ![Oct-12-2022 15-23-29](https://user-images.githubusercontent.com/104052466/195265710-ce2e46a7-950c-47a8-9b43-d0cdb6b6dd0b.gif)
 
 3.퀴즈 결과 페이지
+- 모든 문항을 다 풀면, 풀이에 소요된
 ![퀴즈결과](https://user-images.githubusercontent.com/104052466/195266100-30470eb4-3b3f-4dce-9ba2-33f508b576b1.gif)
 
 4.오답노트 작성
