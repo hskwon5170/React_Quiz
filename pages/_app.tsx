@@ -2,7 +2,7 @@ import { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { RecoilRoot } from "recoil";
-import "../styles/globals.css";
+// import "../styles/globals.css";
 import "antd/dist/antd.css";
 import "react-quill/dist/quill.snow.css";
 import Layout from "../src/components/commons/layout";
