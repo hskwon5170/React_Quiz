@@ -22,7 +22,7 @@ export const Wrapper = styled.section`
 `;
 
 export const Title = styled.div`
-  font-size: 4.5em;
+  font-size: 4.51em;
   color: white;
 `;
 
