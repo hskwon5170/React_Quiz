@@ -32,7 +32,8 @@ export default function QuizButtonUI(props: QuizButtonUIProps) {
         {props.answer
           .replace(/&quot;/g, '"')
           .replace(/&#039;/g, "'")
-          .replace(/&rsquo;/g, "'")}
+          .replace(/&rsquo;/g, "'")
+          .replace(/&amp;/g, "'")}
       </S.Buttons>
     </S.ButtonBox>
   );
