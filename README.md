@@ -15,7 +15,7 @@
 1. git clone
 
 ```bash
-git clone https://github.com/KKingmo/Lets-quiz.git
+git clone git@github.com:hskwon5170/React_Quiz.git
 ```
 
 2. install
