@@ -21,9 +21,35 @@ export const Wrapper = styled.section`
   }
 `;
 
-export const Title = styled.h1`
-  font-size: 4em;
+export const Title = styled.div`
+  font-size: 4.5em;
   color: white;
+`;
+
+export const FlexWrapper = styled.div`
+  display: flex;
+  position: relative;
+  bottom: 1rem;
+  width: 20%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
+`;
+
+export const BottomTitle = styled.div`
+  font-size: 2em;
+  color: white;
+  margin-right: 20px;
+`;
+
+export const LogoImg = styled.img`
+  width: 100px;
 `;
 
 export const Divider = styled.div`
