@@ -53,7 +53,7 @@ export const Wrapper = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 3em;
+  /* gap: 3em; */
 `;
 export const Question = styled.pre`
   white-space: pre-wrap;

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../styles/media";
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -7,6 +8,17 @@ export const Wrapper = styled.section`
   align-items: center;
   margin-top: 3em;
   gap: 1em;
+  @media ${breakPoints.mobile} {
+    margin-top: 8em;
+    width: 100%;
+    font-size: 0.8em;
+  }
+  @media ${breakPoints.tablet} {
+    margin-top: 8em;
+    padding: 3em;
+    width: 100%;
+    font-size: 1em;
+  }
 `;
 
 export const Title = styled.h1`
@@ -23,6 +35,7 @@ export const Divider = styled.div`
 export const SubTitle = styled.h2`
   font-size: 2em;
   color: cornsilk;
+  margin: 10px;
 `;
 export const ThemeBox = styled.div`
   width: 60%;
@@ -31,6 +44,15 @@ export const ThemeBox = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 2em;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    margin-bottom: 5em;
+  }
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    font-size: 1.5em;
+    margin-bottom: 5em;
+  }
 `;
 export const Themes = styled.div`
   width: 20%;
@@ -52,5 +74,13 @@ export const Themes = styled.div`
     background-color: #50ffb0;
     color: #0d008e;
     font-weight: bold;
+  }
+  @media ${breakPoints.mobile} {
+    width: 80%;
+    margin: auto;
+  }
+  @media ${breakPoints.tablet} {
+    width: 40%;
+    font-size: 1.5em;
   }
 `;

@@ -28,7 +28,7 @@ export const TimeUsage = styled.div`
 
 export const ChartWrapper = styled.div`
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 700px;
   width: 100%;
   aspect-ratio: 1.5;
 `;

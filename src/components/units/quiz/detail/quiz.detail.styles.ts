@@ -20,7 +20,6 @@ export const Section = styled.div`
 export const QuizStart = styled.h3`
   font-size: 4em;
   color: white;
-  font-weight: bold;
   text-align: center;
 `;
 
