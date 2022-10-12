@@ -6,11 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "cypress open"
   },
   "dependencies": {
     "@cypress/react": "^6.2.0",
     "@emotion/react": "^11.10.4",
+    "@types/jest": "^29.1.2",
     "antd": "^4.23.5",
     "lottie-web": "^5.9.6",
     "next": "12.3.1",
