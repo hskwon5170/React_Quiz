@@ -1,3 +1,4 @@
+import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
@@ -7,11 +8,13 @@ import "antd/dist/antd.css";
 import "react-quill/dist/quill.snow.css";
 import Layout from "../src/components/commons/layout";
 import GlobalStyle from "../styles/globalStyles";
+import { Loading } from "../src/commons/hooks/Loading";
+import { theme } from "../src/theme";
 
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      onError: (error) => {
+      onError: error => {
         error instanceof Error ? alert(error.message) : alert("접속장애");
       },
       staleTime: 600000,
@@ -21,7 +24,7 @@ const queryClient = new QueryClient({
       refetchOnWindowFocus: false,
     },
     mutations: {
-      onError: (error) => {
+      onError: error => {
         error instanceof Error ? alert(error.message) : alert("접속장애");
       },
     },
@@ -31,13 +34,16 @@ const queryClient = new QueryClient({
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
-      <QueryClientProvider client={queryClient}>
-        <GlobalStyle />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-        <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
-      </QueryClientProvider>
+      <ChakraProvider theme={theme}>
+        <QueryClientProvider client={queryClient}>
+          <GlobalStyle />
+          <Loading />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+          <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+        </QueryClientProvider>
+      </ChakraProvider>
     </RecoilRoot>
   );
 }

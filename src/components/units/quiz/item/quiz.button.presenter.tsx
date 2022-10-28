@@ -9,7 +9,7 @@ export default function QuizButtonUI(props: QuizButtonUIProps) {
   const [isClicked, setIsClicked] = useState(false);
   const [pickedAnswer, setPickedAnswer] = useRecoilState(pickedAnswerState);
 
-  const onClickAnswer = (event) => {
+  const onClickAnswer = event => {
     setIsClicked(true);
     setPickedAnswer(event.target.innerText);
   };

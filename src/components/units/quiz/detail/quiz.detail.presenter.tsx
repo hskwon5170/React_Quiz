@@ -37,6 +37,7 @@ export default function QuizUI(props: QuizUIProps) {
                   index={index}
                   data={props.data}
                 />
+            
               ))}
         </div>
       )}

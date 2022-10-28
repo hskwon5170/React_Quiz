@@ -11,13 +11,16 @@ export default function MainUI(props) {
       </S.FlexWrapper>
       {/* <S.SubTitle>원하는 테마를 선택해주세요</S.SubTitle> */}
       <S.ThemeBox>
-        {props.data?.map((theme) => (
+         {props.data?.map((theme) => (
           <ThemeItem
             key={theme.id}
             theme={theme}
             onClickMoveToQuizPage={props.onClickMoveToQuizPage}
           />
         ))}
+        {/* {props.data?.map((el) => (
+          <S.Themes key={el.id} onClick={ props.onClickMoveToQuizPage(el.id)}>{ el.name}</S.Themes>
+        ))} */}
       </S.ThemeBox>
     </S.Wrapper>
   );

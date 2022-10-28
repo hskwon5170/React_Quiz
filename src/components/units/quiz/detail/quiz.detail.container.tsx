@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 import { useStopwatch } from "react-timer-hook";
 import { QuizProps } from "./quiz.datail.types";
 import QuizUI from "./quiz.detail.presenter";
-import { getQuizByTheme } from "./quiz.query";
+import { GetQuizByTheme } from "./quiz.query";
 
 export default function Quiz(props: QuizProps) {
   const [isClicked, setIsClicked] = useState(false);
@@ -16,8 +16,9 @@ export default function Quiz(props: QuizProps) {
   };
   const fallback = [];
   const { data = fallback } = useQuery(["QuizData"], () =>
-    getQuizByTheme(themeId)
+    GetQuizByTheme(themeId)
   );
+  console.log("퀴즈디테일:)", data)
   return (
     <QuizUI
       data={data}
