@@ -51,6 +51,7 @@ yarn test
 - Vercel
 - Antd
 - React-quill
+- Chakra UI
 
 ---
 
@@ -93,6 +94,11 @@ yarn test
 ### 1.메인페이지
 - 사용자가 원하는 퀴즈의 카테고리를 설정할 수 있습니다.
 ![Oct-12-2022 15-21-14](https://user-images.githubusercontent.com/104052466/195265324-f70a899d-7d23-44cf-add5-decc833eb038.gif)
+
+### 1-1.메인페이지 Loading 스피너
+- fetching 과정에서 사용자 경험을 위해 Loading 스피너를 추가하였습니다.
+![spinner](https://user-images.githubusercontent.com/104052466/198910364-c0c79b61-1075-4151-a107-9769eef7723f.gif)
+
 
 
 ### 2.퀴즈 풀기 페이지
