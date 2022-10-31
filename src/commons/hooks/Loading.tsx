@@ -11,10 +11,11 @@ export function Loading(): ReactElement {
 
   return (
     <Spinner
+      size="xl"
       thickness="4px"
       speed="0.65s"
       emptyColor="olive.200"
-      color="olive.800"
+      color="blue.800"
       role="status"
       position="fixed"
       zIndex="9999"
