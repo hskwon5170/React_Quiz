@@ -136,10 +136,7 @@ export const NextButton = styled.button`
   border-radius: 10px;
   border: none;
   outline: none;
-  /* background-color: ${(props: NextButtonEmotionProps) =>
-    props.isClicked ? "yellow" : "transparent"}; */
   background-color: yellow;
-  /* color: ${props => (props.isClicked ? "black" : "transparent")}; */
   color: black;
   font-weight: bolder;
   transition: all 250ms;
