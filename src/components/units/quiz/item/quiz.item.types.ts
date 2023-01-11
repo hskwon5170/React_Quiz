@@ -43,6 +43,6 @@ export type ItemEmotionProps = {
   isClicked: boolean;
 };
 export type NextButtonEmotionProps = {
-  isClicked: boolean;
+  // isClicked: boolean;
   isFinished: any;
 };

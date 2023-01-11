@@ -9,7 +9,7 @@ export default function QuizTimer({
 }) {
   const [timeCount, setTimeCount] = useState<number>(0);
 
-  const setTimer = () => {
+  const setTimer = () => { // callback
     setTimeCount((timeRef.current += 1));
   };
 
@@ -18,7 +18,7 @@ export default function QuizTimer({
   useEffect(() => {
     timerStart();
 
-    return () => {
+    return () => { // 뒷정리함수. unmount 되기 전에 timerPause를 해준다
       timerPause();
     };
   }, []);

@@ -3,15 +3,17 @@ import QuizItem from "../item/quiz.item.container";
 import QuizStartUI from "./quiz.start.presenter";
 import Quiz from "./quiz.detail.container";
 import { QuizUIProps } from "./quiz.datail.types";
+import { useState } from "react";
 export default function QuizUI(props: QuizUIProps) {
+  const { isClicked, isRetrying, data } = props;
   return (
     <S.Wrapper>
-      {!props.isClicked && (
+      {!isClicked && (
         <QuizStartUI onClickShowQuizItem={props.onClickShowQuizItem} />
       )}
-      {props.isClicked && (
+      {isClicked && (
         <div>
-          {props.isRetrying
+          {isRetrying
             ? props.retryingData?.map((quiz, index) => (
                 <QuizItem
                   isRetrying={props.isRetrying}
@@ -25,7 +27,7 @@ export default function QuizUI(props: QuizUIProps) {
                   retryingData={props.retryingData}
                 />
               ))
-            : props.data?.quizData?.map((quiz, index) => (
+            : data?.quizData?.map((quiz, index) => (
                 <QuizItem
                   isRetrying={props.isRetrying}
                   pause={props.pause}
@@ -37,7 +39,6 @@ export default function QuizUI(props: QuizUIProps) {
                   index={index}
                   data={props.data}
                 />
-            
               ))}
         </div>
       )}

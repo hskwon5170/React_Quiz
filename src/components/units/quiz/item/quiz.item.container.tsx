@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import {
   correctAnswersState,
   inCorrectAnswersState,
@@ -23,21 +23,21 @@ export default function QuizItem(props: QuizItemProps) {
   const [inCorrectAnswerCounter, setInCorrectAnswerCounter] = useRecoilState(
     inCorrectAnswersState
   );
-  const [stage, setStage] = useState<number>(1);
   const [isClicked, setIsClicked] = useState(false);
 
   const onClickAnswer = () => {
     if (isClicked) return;
-    setIsClicked((prev) => true);
+    setIsClicked(prev => !prev);
   };
 
-  const onClickMoveToNextQuestion = (Questions) => () => {
+  const onClickMoveToNextQuestion = Questions => () => {
     if (pickedAnswer === props.quiz.correct_answer) {
       const correctAnswers = [...correctAnswerCounter];
       correctAnswers.push(pickedAnswer);
       setCorrectAnswerCounter(correctAnswers);
       // console.log("correct", correctAnswers);
     } else {
+      // 오답일경우
       const reviewData = [...reviewNote, Questions];
       setReviewNote(reviewData);
       const inCorrectAnswers = [...inCorrectAnswerCounter];
@@ -45,7 +45,6 @@ export default function QuizItem(props: QuizItemProps) {
       setInCorrectAnswerCounter(inCorrectAnswers);
       // console.log("inCorrect", inCorrectAnswers);
     }
-
     setIndexCounter(indexCounter + 1);
     setPickedAnswer("");
     if (indexCounter === 9) {
@@ -64,6 +63,7 @@ export default function QuizItem(props: QuizItemProps) {
       sessionStorage.setItem("QuizData", JSON.stringify(props.data.quizData));
     }
   }, []);
+
   return (
     <QuizItemUI
       onClickMoveToNextQuestion={onClickMoveToNextQuestion}

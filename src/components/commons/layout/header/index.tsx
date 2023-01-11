@@ -1,12 +1,17 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
+import { FcHome } from "react-icons/fc";
 
 export default function LayoutHeader() {
   return (
     <Container>
       <Wrapper>
         <b>
-          <Link href={{ pathname: "/" }}>메인</Link>
+          <Link href={{ pathname: "/" }}>
+            <IconWrapper>
+              <FcHome />
+            </IconWrapper>
+          </Link>
         </b>
       </Wrapper>
     </Container>
@@ -33,4 +38,19 @@ const Wrapper = styled.div`
   a:hover {
     text-decoration: underline;
   }
+`;
+
+const IconWrapper = styled.div`
+  font-size: 1.6rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  :hover {
+    transform: scale(1.4);
+    transition: transform 0.5s;
+  }
+  transform: scale(1);
+  transition: transform 0.5s;
 `;

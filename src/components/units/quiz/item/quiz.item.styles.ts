@@ -24,6 +24,7 @@ export const Section = styled.section`
     margin-bottom: 30px;
   }
 `;
+
 export const QuestionTitle = styled.h3`
   align-self: flex-start;
   color: white;
@@ -79,9 +80,15 @@ export const Question = styled.pre`
   margin-bottom: 1em;
   font-size: 1.5em;
   color: white;
+  -ms-overflow-style: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
   /* font-weight: 600; */
   @media ${breakPoints.mobile} {
     font-size: 1.5em;
+    width: 300px;
+    padding: 3px 0px 3px 0px;
   }
   @media ${breakPoints.tablet} {
     margin-top: 1.3em;
@@ -114,6 +121,7 @@ export const Buttons = styled.button`
   transition: all 250ms;
   @media ${breakPoints.mobile} {
     font-size: 1em;
+    width: 300px;
   }
   @media ${breakPoints.tablet} {
     font-size: 1.7rem;
@@ -128,9 +136,11 @@ export const NextButton = styled.button`
   border-radius: 10px;
   border: none;
   outline: none;
-  background-color: ${(props: NextButtonEmotionProps) =>
-    props.isClicked ? "yellow" : "transparent"};
-  color: ${(props) => (props.isClicked ? "black" : "transparent")};
+  /* background-color: ${(props: NextButtonEmotionProps) =>
+    props.isClicked ? "yellow" : "transparent"}; */
+  background-color: yellow;
+  /* color: ${props => (props.isClicked ? "black" : "transparent")}; */
+  color: black;
   font-weight: bolder;
   transition: all 250ms;
   @media ${breakPoints.tablet} {

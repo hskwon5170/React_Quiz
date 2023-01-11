@@ -23,6 +23,7 @@ export const Wrapper = styled.section`
 
 export const Title = styled.div`
   font-size: 4.1em;
+  font-weight: bolder;
   color: white;
 `;
 
@@ -30,10 +31,11 @@ export const FlexWrapper = styled.div`
   display: flex;
   position: relative;
   bottom: 1rem;
-  width: 20.1%;
+  width: 21%;
   justify-content: center;
   align-items: center;
   margin-bottom: 3rem;
+  padding: 10px 0px 10px 0px;
   @media ${breakPoints.tablet} {
     width: 100%;
   }
@@ -44,12 +46,13 @@ export const FlexWrapper = styled.div`
 
 export const BottomTitle = styled.div`
   font-size: 2em;
+  font-weight: bolder;
   color: white;
   margin-right: 20px;
 `;
 
 export const LogoImg = styled.img`
-  width: 100px;
+  width: 80px;
 `;
 
 export const Divider = styled.div`
@@ -94,6 +97,7 @@ export const Themes = styled.div`
   justify-content: center;
   text-align: center;
   font-size: 1em;
+  font-weight: bolder;
   transition: transform 0.2s; /* Animation */
   :hover {
     transform: scale(1.1);

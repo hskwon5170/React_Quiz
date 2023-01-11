@@ -18,7 +18,7 @@ export default function RetryPage() {
       {isLoading ? (
         ""
       ) : (
-        <Quiz isRetrying={true} retryingData={retryingData} data={undefined} />
+        <Quiz isRetrying={true} retryingData={retryingData} data={undefined} quizData={""} stage={0} />
       )}
     </>
   );

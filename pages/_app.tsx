@@ -33,18 +33,20 @@ const queryClient = new QueryClient({
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <RecoilRoot>
-      <ChakraProvider theme={theme}>
-        <QueryClientProvider client={queryClient}>
-          <GlobalStyle />
-          <Loading />
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-          <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
-        </QueryClientProvider>
-      </ChakraProvider>
-    </RecoilRoot>
+    <div className="main">
+      <RecoilRoot>
+        <ChakraProvider theme={theme}>
+          <QueryClientProvider client={queryClient}>
+            <GlobalStyle />
+            <Loading />
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+            <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+          </QueryClientProvider>
+        </ChakraProvider>
+      </RecoilRoot>
+    </div>
   );
 }
 

@@ -13,7 +13,7 @@ export default function Main() {
   });
   console.log("데이터", data);
   const router = useRouter();
-  const onClickMoveToQuizPage = (themeId) => () => {
+  const onClickMoveToQuizPage = (themeId: number) => () => {
     router.push(`/quiz/detail/${themeId}`);
   };
 

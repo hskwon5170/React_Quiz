@@ -14,7 +14,6 @@ export default function QuizButtonUI(props: QuizButtonUIProps) {
     setPickedAnswer(event.target.innerText);
   };
   const onClickAlert = () => {
-    // alert("답은 한개만 고를수 있습니다.");
     Swal.fire({
       title: "답은 한개만 선택해주세요!",
       icon: "error",
@@ -23,6 +22,7 @@ export default function QuizButtonUI(props: QuizButtonUIProps) {
       backdrop: false,
     });
   };
+
   return (
     <S.ButtonBox>
       <S.Buttons

@@ -7,7 +7,7 @@ import QuizUI from "./quiz.detail.presenter";
 import { GetQuizByTheme } from "./quiz.query";
 
 export default function Quiz(props: QuizProps) {
-  const [isClicked, setIsClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState<boolean>(false);
   const { seconds, minutes, hours, pause } = useStopwatch({ autoStart: true });
   const router = useRouter();
   const themeId = router.query.id;
@@ -18,7 +18,12 @@ export default function Quiz(props: QuizProps) {
   const { data = fallback } = useQuery(["QuizData"], () =>
     GetQuizByTheme(themeId)
   );
-  console.log("퀴즈디테일:)", data)
+
+  // console.log(data?.quizData?.length);
+  // console.log("퀴즈디테일:)", data);
+  // console.log("num", stage);
+  // console.log("length", data.quizData.length);
+  // console.log("value", stage / data.quizData.length);
   return (
     <QuizUI
       data={data}
@@ -30,6 +35,10 @@ export default function Quiz(props: QuizProps) {
       pause={pause}
       isRetrying={props.isRetrying}
       retryingData={props.retryingData}
+      dataQuiz={[]}
+      category={""}
+      difficulty={""}
+      stage={0}
     />
   );
 }

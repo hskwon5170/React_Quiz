@@ -10,7 +10,7 @@ import { QuizItemUIProps } from "./quiz.item.types";
 export default function QuizItemUI(props: QuizItemUIProps) {
   const [pickedAnswer] = useRecoilState(pickedAnswerState);
   const retryingAnswers = props.retryingData?.map(
-    (Answers) => Answers.incorrect_answers
+    Answers => Answers.incorrect_answers
   );
   const correctContainer = useRef(null);
   const timeRef = useRef<number>(0);
@@ -92,14 +92,16 @@ export default function QuizItemUI(props: QuizItemUIProps) {
                   </S.LottieWrapper>
                 ))}
             </S.StatusWrap>
-            <S.NextButton
-              isFinished={pickedAnswer}
-              onClick={props.onClickMoveToNextQuestion(props.quiz)}
-              // onClickAnswer={props.onClickAnswer}
-              isClicked={props.isClicked}
-            >
-              다음 {">"}
-            </S.NextButton>
+            {props.isClicked && (
+              <S.NextButton
+                isFinished={pickedAnswer}
+                onClick={props.onClickMoveToNextQuestion(props.quiz)}
+                // onClickAnswer={props.onClickAnswer}
+                // isClicked={props.isClicked}
+              >
+                다음 {">"}
+              </S.NextButton>
+            )}
           </S.Wrapper>
         </S.Section>
       )}
